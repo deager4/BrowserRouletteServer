@@ -14,7 +14,7 @@ public class MainThread extends Thread
 	
 	private static ArrayList<DatagramPacket> packetPool;
 	
-	public MainThread(int port)
+	public MainThread()
 	{
 		super("main thread");
 		packetPool = new ArrayList<DatagramPacket>();
@@ -114,6 +114,11 @@ public class MainThread extends Thread
 				continue;
 			}
 		}
+	}
+	
+	public void terminate()
+	{
+		isRunning = false;
 	}
 	
 }
